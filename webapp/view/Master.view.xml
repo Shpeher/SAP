@@ -1,0 +1,49 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.untitledPrototype.controller.Master" xmlns="sap.m" xmlns:layout="sap.ui.commons.layout">
+    <Page showHeader="false" title="Page Title" showFooter="false" showNavButton="false" enableScrolling="false">
+        <content>
+            <layout:AbsoluteLayout horizontalScrolling="Hidden" verticalScrolling="Auto">
+                <layout:positions>
+                    <layout:PositionContainer left="0px" top="41px">
+                        <layout:control>
+                            <List mode="SingleSelectMaster"  width="100%" headerText="Header" footerText="" backgroundDesign="Solid" itemPress="_onObjectListItemPress" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" visible="true" items="{path:'/ItemSet', templateShareable:true}">
+                                <infoToolbar>
+                                    <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+                                        <content>
+                                            <Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </content>
+                                    </Toolbar>
+                                </infoToolbar>
+                                <headerToolbar>
+                                    <Toolbar enabled="true" visible="true" width="" design="Solid">
+                                        <content>
+                                            <SearchField placeholder="{i18>Search}" showSearchButton="true" visible="true" width="100%" liveChange="_onSearchFieldLiveChange" search="_onSearchFieldSearch" />
+                                        </content>
+                                    </Toolbar>
+                                </headerToolbar>
+                                <items>
+                                    <ObjectListItem intro="{ID}" title="{description}" icon="sap-icon://cart-5" number="{SUM}" numberUnit="{i18n>RUR}" numberState="None" type="Active" selected="true" showMarkers="false">
+                                        <attributes/>
+                                        <firstStatus/>
+                                        <secondStatus/>
+                                    </ObjectListItem>
+                                </items>
+                            </List>
+                        </layout:control>
+                    </layout:PositionContainer>
+                </layout:positions>
+            </layout:AbsoluteLayout>
+        </content>
+        <footer>
+            <OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+                <content>
+                    <ToolbarSpacer width=""/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </footer>
+        <headerContent/>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+</mvc:View>
